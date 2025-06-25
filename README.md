@@ -11,12 +11,6 @@ This is a lightweight Bash script to extract mutual fund NAV (Net Asset Value) d
 - Optional `jq` formatting for readable JSON.
 - Cleans up temporary files automatically.
 
-## 📦 Requirements
-
-- Bash
-- `curl`
-- `awk`
-- Optional: `jq` (for formatted JSON output)
 
 ## 🚀 Usage
 
@@ -36,28 +30,6 @@ Run the script from a terminal:
 ./amfi_extractor.sh --help
 ```
 
-## 📁 Output
-
-- `amfi_nav_data.tsv` – Tab-separated format
-- `amfi_nav_data.json` – JSON format
-- Output files are automatically ignored by Git
-
-## 🗂 Project Structure
-
-```
-.
-├── amfi_extractor.sh        # Main script
-├── amfi_nav_data.tsv        # Output (TSV)
-├── amfi_nav_data.json       # Output (JSON)
-├── README.md                # This file
-└── .gitignore               # Ignore rules
-```
-
-## ❌ Ignored Files
-
-This project automatically excludes:
-- `.tsv`, `.json` outputs
-- Any intermediate `.txt` temp files
 
 ## 📝 Example TSV Output
 
