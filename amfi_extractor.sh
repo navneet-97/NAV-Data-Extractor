@@ -1,11 +1,4 @@
-#!/bin/bash
-
-# AMFI NAV Data Extractor
-# Extracts Scheme Name and Asset Value from AMFI NAV data
-# Usage: ./amfi_extractor.sh [output_format]
-# output_format: tsv (default) or json
-
-set -e  # Exit on any error
+set -e
 
 # Configuration
 AMFI_URL="https://www.amfiindia.com/spages/NAVAll.txt"
@@ -77,9 +70,6 @@ extract_to_tsv() {
     echo -e "Scheme_Name\tAsset_Value" > "$TSV_OUTPUT"
     
     # Process the data
-    # AMFI NAV file format typically has:
-    # Lines starting with scheme codes contain the actual data
-    # Format: SchemeCode;ISIN;SchemeName;NetAssetValue;RepurchasePrice;SalePrice;Date
     
     awk -F';' '
     BEGIN {
@@ -211,7 +201,6 @@ cleanup() {
     fi
 }
 
-# Main execution
 main() {
     print_status "AMFI NAV Data Extractor Starting..."
     print_status "Output format: $OUTPUT_FORMAT"
@@ -261,5 +250,4 @@ if [[ "$1" == "-h" || "$1" == "--help" ]]; then
     exit 0
 fi
 
-# Run main function
 main
